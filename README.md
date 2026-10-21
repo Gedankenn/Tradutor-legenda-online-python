@@ -6,8 +6,8 @@ Python script that translates an English `.srt` subtitle file to Portuguese usin
 
 `tradutor_legenda_final.py` runs in two passes:
 
-1. **Translate**: reads `legenda_ingles.srt` line by line, sends the text lines to `mtranslate.translate(..., 'pt', 'en')` and writes `legenda_traduzida.srt`. Blank lines and the cue number/timestamp lines that follow them are copied unchanged.
-2. **Clean up**: re-reads the translated file and fixes spacing that the translation introduces around digits and `-->` in timestamps, writing `legenda_final.srt`.
+1. **Translate**: reads `legenda_ingles.srt` line by line, sends the text lines to `mtranslate.translate(..., 'pt', 'en')` and writes `legenda_traduzida.srt`. Blank lines and the cue number after them are copied unchanged; the other lines, timestamps included, go through the translator.
+2. **Clean up**: re-reads the translated file and fixes the spacing that translation introduces in the timestamps (around digits and `-->`), writing `legenda_final.srt`.
 
 ## Usage
 
